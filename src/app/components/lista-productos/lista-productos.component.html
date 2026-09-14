@@ -1,0 +1,14 @@
+<h2>Productos disponibles</h2>
+
+<div *ngIf="productosDisponibles.length > 0; else sinProductos">
+  <ul>
+    <li *ngFor="let producto of productosDisponibles">
+      {{ producto.nombre }} - Q{{ producto.precio }}
+      <button (click)="agregarAlCarrito(producto)">Agregar</button>
+    </li>
+  </ul>
+</div>
+
+<ng-template #sinProductos>
+  <p>No hay productos disponibles.</p>
+</ng-template>
